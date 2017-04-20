@@ -21,7 +21,8 @@ public class FileCopy {
         FileChannel ic = is.getChannel();
         FileChannel oc = os.getChannel();
 
-        ByteBuffer bb = ByteBuffer.allocateDirect(1024);
+        ByteBuffer bb = ByteBuffer.allocateDirect(1024);//分配JVM之外内存 大文件适用
+        //ByteBuffer bb = ByteBuffer.allocate(1024);//分配JVM内存
 
         long st = System.currentTimeMillis();
         while(true){
