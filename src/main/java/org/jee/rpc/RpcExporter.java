@@ -1,7 +1,6 @@
 package org.jee.rpc;
 
 import java.io.IOException;
-import java.io.ObjectInput;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.lang.reflect.Method;
@@ -15,6 +14,7 @@ import java.util.concurrent.Executors;
  * 描述:RPC服务发布者
  * Created by admin on 16/2/28.
  */
+
 public class RpcExporter {
     // 创建线程池
     static Executor executor = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
@@ -30,7 +30,7 @@ public class RpcExporter {
                 executor.execute(new ExporterTask(serverSocket.accept()));
             }
         } finally {
-          serverSocket.close();  
+          serverSocket.close();
         }
     }
 
