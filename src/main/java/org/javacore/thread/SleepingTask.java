@@ -48,5 +48,6 @@ public class SleepingTask extends LiftOff {
             exec.execute(new SleepingTask());// 由线程池决定执行线程
         // 顺序关闭，执行以前提交的线程，不接受新的线程
         exec.shutdown();
+        System.out.println("主线程关闭线程池");
     }
 }

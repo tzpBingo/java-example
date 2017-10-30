@@ -26,7 +26,9 @@ public class Lambda5 {
         dummyValues.put("Two", 2);
         dummyValues.put("Three", 3);
 
-        dummyValues.forEach((key,value) -> System.out.println(key+"-"+value));
+        dummyValues.forEach((key,value) -> {
+            System.out.println(key+"-"+value);
+        });
 
     }
 }

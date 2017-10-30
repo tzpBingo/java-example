@@ -43,6 +43,9 @@ public class CleanerTask extends Thread{
                 deque.removeLast();
                 delete = true;
             }
+            if(deque.size()/10==0){
+                System.out.printf("Now: Size of the queue: %d\n",deque.size());
+            }
         } while (difference > 10000);
 
         if (delete) {

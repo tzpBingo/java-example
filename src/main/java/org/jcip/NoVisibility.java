@@ -15,14 +15,22 @@ public class NoVisibility {
     private static class ReaderThread extends Thread {
         public void run() {
             while (!ready)
-                Thread.yield();
+                Thread.yield();//当前线程让资源
             System.out.println(number);
         }
     }
 
     public static void main(String[] args) {
         new ReaderThread().start();
-        number = 42;
+        new ReaderThread().start();
+        new ReaderThread().start();
+        new ReaderThread().start();
+        new ReaderThread().start();
+        new ReaderThread().start();
+
+
+
         ready = true;
+        number = 42;
     }
 }
